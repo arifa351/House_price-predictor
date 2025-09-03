@@ -14,7 +14,7 @@ def predict():
     # make a dataframe for model input
     house_df = pd.DataFrame([[rooms, size]], 
                             columns=['Rooms', 'Size'])
-    with open('models/model1.pkl', 'rb') as obj:
+    with open('model1.pkl', 'rb') as obj:
         model = pickle.load(obj)
         prediction = model.predict(house_df)
         return render_template('index.html', prediction = prediction)
